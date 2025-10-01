@@ -133,19 +133,7 @@
 　　<a href="nude-side.JPG" download>裸側面をダウンロード</a><br>
     
     <!-- アクセスカウンター -->
-    <p>アクセス数: <span id="accessCount">0</span> 回</p>
-<script>
-    // GitHub Actionsカウンターの読み込み
-    fetch('/counter.txt')
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById('accessCount').innerText = data + ' 回';
-        })
-        .catch(error => {
-            console.error('カウンターエラー:', error);
-            document.getElementById('accessCount').innerText = 'エラー';
-        });
-</script>
+   
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script>
@@ -190,14 +178,24 @@
         });
 
         // アクセスカウンター
-        let accessCount = localStorage.getItem('accessCount') ? parseInt(localStorage.getItem('accessCount')) : 0;
-        accessCount++;
-        localStorage.setItem('accessCount', accessCount);
-        document.getElementById('accessCount').innerText = 'アクセス数: ' + accessCount + ' 回';
-    </script>
+       <p>アクセス数: <span id="accessCount">0</span> 回</p>
+<script>
+    // GitHub Actionsカウンターの読み込み
+    fetch('/counter.txt')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('accessCount').innerText = data + ' 回';
+        })
+        .catch(error => {
+            console.error('カウンターエラー:', error);
+            document.getElementById('accessCount').innerText = 'エラー';
+        });
+</script>
+
 </body>
 
 </html>
+
 
 
 
