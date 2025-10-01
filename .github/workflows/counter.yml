@@ -1,0 +1,33 @@
+name: Update Hit Counter
+
+on:
+  schedule:
+    - cron: '0 * * * *'  # 毎時実行（1時間ごと更新）
+  workflow_dispatch:  # 手動トリガーも可能
+
+jobs:
+  update-counter:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - name: Update counter
+      run: |
+        COUNTER_FILE="counter.txt"
+        if [ -f "$COUNTER_FILE" ]; then
+          COUNTER=$(cat $COUNTER_FILE)
+        else
+          COUNTER=0
+        fi
+        NEW_COUNTER=$((COUNTER + 1))  # 実際はログ解析で本当のヒットをカウント（簡易版）
+        echo $NEW_COUNTER > $COUNTER_FILE
+    - uses: actions/upload-artifact@v4
+      with:
+        name: counter
+        path: counter.txt
+    - name: Commit changes
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add counter.txt
+        git diff --staged --quiet || git commit -m "Update hit counter"
+        git push
