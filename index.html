@@ -7,30 +7,17 @@
     <style>
     body { font-family: Arial, sans-serif; margin: 20px; background-color: #f9f9f9; }
     h1, h2, h3 { color: #333; }
-    table { 
-        border-collapse: collapse; 
-        width: 80%; 
-        max-width: 800px; 
-        margin: 20px 0 20px 0; /* 左寄せのためにmarginを調整 */
-    }
-    th, td { 
-        border: 1px solid #ddd; 
-        padding: 8px; 
-        text-align: left; 
-        word-wrap: break-word; 
-    }
+    table { border-collapse: collapse; width: 80%; max-width: 800px; margin: 20px 0; }
+    th, td { border: 1px solid #ddd; padding: 8px; text-align: left; word-wrap: break-word; }
     th { background-color: #f2f2f2; }
     img { max-width: 100%; height: auto; width: 150px; height: 266px; }
     .adult-warning { color: red; font-weight: bold; margin-bottom: 10px; }
-    .chart-container { 
-        width: 80%; 
-        max-width: 800px; 
-        margin: 20px 0; /* 左寄せ */
-    }
-    canvas { 
-        width: 100% !important; 
-        max-width: 800px !important; 
-        height: auto !important; 
+    .chart-container { width: 80%; max-width: 800px; margin: 20px 0; }
+    canvas { width: 100% !important; max-width: 800px !important; height: auto !important; }
+    p { 
+        max-width: 400px; /* 約30-40文字（日本語フォントで約15-20文字程度）に相当 */
+        word-break: break-all; /* 強制的に折り返し */
+        line-height: 1.5; /* 行間の読みやすさ向上 */
     }
 </style>
 </head>
@@ -278,6 +265,7 @@
 </body>
 
 </html>
+
 
 
 
