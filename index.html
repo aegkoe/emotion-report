@@ -14,10 +14,12 @@
     .adult-warning { color: red; font-weight: bold; margin-bottom: 10px; }
     .chart-container { width: 80%; max-width: 800px; margin: 20px 0; }
     canvas { width: 100% !important; max-width: 800px !important; height: auto !important; }
-    p { 
-        max-width: 700px; /* 約30-40文字（日本語フォントで約15-20文字程度）に相当 */
-        word-break: break-all; /* 強制的に折り返し */
-        line-height: 1.5; /* 行間の読みやすさ向上 */
+    p { max-width: 700px; word-break: break-all; line-height: 1.5; }
+    li { 
+        max-width: 700px; /* pと同じ幅に */
+        word-break: break-all; /* 強制折り返し */
+        line-height: 1.5; /* 行間をpと一致 */
+        margin-bottom: 10px; /* リストアイテム間の余白 */
     }
 </style>
 </head>
@@ -183,6 +185,7 @@
 </body>
 
 </html>
+
 
 
 
