@@ -145,9 +145,6 @@
 　　<img src="nude-side.JPG" alt="裸側面" style="width: 150px; height: 266px;">
 　　<a href="nude-side.JPG" download>裸側面をダウンロード</a><br>
     
-    <!-- アクセスカウンター -->
-    <p id="accessCount">アクセス数: 0 回</p>
-
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script>
         // チャート
@@ -190,14 +187,10 @@
             }
         });
 
-        // アクセスカウンター
-        let accessCount = localStorage.getItem('accessCount') ? parseInt(localStorage.getItem('accessCount')) : 0;
-        accessCount++;
-        localStorage.setItem('accessCount', accessCount);
-        document.getElementById('accessCount').innerText = 'アクセス数: ' + accessCount + ' 回';
-    </script>
+        </script>
 </body>
 </html>
+
 
 
 
